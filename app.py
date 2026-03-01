@@ -126,7 +126,7 @@ categories = ['vetements-homme', 'chaussures-homme', 'vetements-enfants', 'chaus
 
 # ------------------ SCRAPER ------------------ #
 if option == "Scraper":
-    st.header("Scraping)
+    st.header("Scraping")
     for cat in categories:
         if st.button(cat.replace('-', ' ').title()):
             df = load_data(cat, max_pages)
@@ -273,4 +273,5 @@ elif option == "Évaluer l'App":
         '<button>Ouvrir Google Forms</button></a>',
         unsafe_allow_html=True
     )
+
 
