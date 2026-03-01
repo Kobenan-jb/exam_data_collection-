@@ -126,21 +126,12 @@ categories = ['vetements-homme', 'chaussures-homme', 'vetements-enfants', 'chaus
 
 # ------------------ SCRAPER ------------------ #
 if option == "Scraper":
-    st.header("Scraping")
+    st.header("Scraping)
     for cat in categories:
         if st.button(cat.replace('-', ' ').title()):
             df = load_data(cat, max_pages)
 
-            if cat == 'vetements-homme':
-                save_to_csv(df, 'vetement_homme_scraped.csv')
-            elif cat == 'vetements-enfants':
-                save_to_csv(df, 'vetement_enfant_scraped.csv')
-            elif cat == 'chaussures-homme':
-                save_to_csv(df, 'chaussure_homme_scraped.csv')
-            elif cat == 'chaussures-enfants':
-                save_to_csv(df, 'chaussure_enfant_scraped.csv')
-
-            st.write(f"Dimension : {df.shape[0]} lignes, {df.shape[1]} colonnes")
+            st.write(f"Dimension : {df.shape[0]} lignes et {df.shape[1]} colonnes")
             st.dataframe(df)
 
 # ------------------ DASHBOARD ------------------ #
@@ -219,7 +210,7 @@ elif option == "Dashboard":
                 type_mean = df['Type'].mode()
                 
                 if not type_mean.empty:
-                    type_mean = type_mean[0]   # on prend le premier si plusieurs
+                    type_mean = type_mean[0] 
                 else:
                     type_mean = "Non défini"
                 # ----------- Tableau récapitulatif ----------- #
@@ -264,7 +255,7 @@ elif option == "Télécharger":
         if os.path.exists(path):
             if st.button(label):
                 df = pd.read_csv(path)
-                st.write(f"{df.shape[0]} lignes, {df.shape[1]} colonnes")
+                st.write(f"Dimension : {df.shape[0]} lignes et {df.shape[1]} colonnes")
                 st.dataframe(df)
 
 # ------------------ ÉVALUER ------------------ #
@@ -282,3 +273,4 @@ elif option == "Évaluer l'App":
         '<button>Ouvrir Google Forms</button></a>',
         unsafe_allow_html=True
     )
+
