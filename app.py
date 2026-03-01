@@ -119,7 +119,7 @@ def save_to_csv(df, filename):
 
 # ------------------ SIDEBAR ------------------ #
 st.sidebar.title("Options")
-option = st.sidebar.selectbox("Choisir :", ["Scraper", "Dashboard", "Télécharger", "Évaluer l'App"])
+option = st.sidebar.selectbox(["Scraper", "Dashboard", "Télécharger", "Évaluer l'App"])
 max_pages = st.sidebar.number_input("Nb Pages", value=1, min_value=1, max_value=10)
 
 categories = ['vetements-homme', 'chaussures-homme', 'vetements-enfants', 'chaussures-enfants']
@@ -273,5 +273,6 @@ elif option == "Évaluer l'App":
         '<button>Ouvrir Google Forms</button></a>',
         unsafe_allow_html=True
     )
+
 
 
